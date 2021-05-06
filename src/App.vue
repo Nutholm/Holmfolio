@@ -1,9 +1,14 @@
 <template>
-  <div id="app">
+  
+  <v-app>
+    <div id="app">
     <myHeader id="myHeader"></myHeader>
     <myContent id="myContent"></myContent>
     <myFooter id="myFooter"></myFooter>
   </div>
+  </v-app>
+  
+  
 </template>
 
 <script>
@@ -12,7 +17,12 @@ import Content from "./components/Content";
 import Footer from "./components/Footer";
 
 export default {
-  components: {
+  name: 'App',
+
+  data: () => ({
+    //
+  }),
+   components: {
     myHeader: Header,
     myContent: Content,
     myFooter: Footer,
@@ -20,9 +30,9 @@ export default {
 };
 </script>
 
+
 <style lang="scss">
 @import "./src/styles/variables.scss";
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +41,4 @@ export default {
   background-color: map-get($Colorscheme, Primary);
   color: map-get($Colorscheme, Quaternary)
 }
-
-
-
 </style>
